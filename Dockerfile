@@ -6,8 +6,13 @@ WORKDIR /app
 #設定內部port
 EXPOSE 8080
 
-RUN dotnet restore -r rhel.7-x64
-RUN sudo dotnet publish -f netcoreapp2.0 -c Release -o ./app -r rhel.7-x64 --self-contained false /p:MicrosoftNETPlatformLibrary=Microsoft.NETCore.App
+#之後在想如何build
+#ENV LD_LIBRARY_PATH=/opt/rh/rh-nodejs6/root/usr/lib64:/opt/rh/rh-dotnet20/root/usr/lib64
+#ENV PATH=/opt/rh/rh-nodejs6/root/usr/bin:/opt/rh/rh-dotnet20/root/usr/bin:/opt/rh/rh-dotnet20/root/usr/sbin:/opt/app-root/src/.local/bin:/opt/app-root/src/bin:/opt/app-root/node_modules/.bin:/opt/app-root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+#RUN yum install -y rh-dotnet20-dotnet-sdk-2.1
+#RUN dotnet restore -r rhel.7-x64
+#RUN sudo dotnet publish -f netcoreapp2.0 -c Release -o ./app -r rhel.7-x64 --self-contained false /p:MicrosoftNETPlatformLibrary=Microsoft.NETCore.App
 
 
 # 複製app全部的檔案
