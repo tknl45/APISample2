@@ -3,8 +3,9 @@ FROM registry.access.redhat.com/dotnet/dotnet-20-runtime-rhel7
 
 #WORKDIR 指令會設定任何其餘 RUN、CMD、ENTRYPOINT、COPY 和 ADD Dockerfile 指令的工作目錄。 如果目錄不存在，則會建立它。 在此情況下，WORKDIR 會設定為應用程式目錄。
 #WORKDIR /app
+
 #設定內部port
-#EXPOSE 8080
+EXPOSE 8080
 
 #之後在想如何build
 #ENV LD_LIBRARY_PATH=/opt/rh/rh-nodejs6/root/usr/lib64:/opt/rh/rh-dotnet20/root/usr/lib64
