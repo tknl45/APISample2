@@ -34,3 +34,6 @@ msbuild.wrn
 
 # Visual Studio 2015
 /bin/bash: Q: command not found
+
+publish/
+sample.tar

@@ -32,9 +32,15 @@
 
 # 發行
 > dotnet restore -r rhel.7-x64
-> sudo dotnet publish -f netcoreapp2.0 -c Release -o ./app -r rhel.7-x64 --self-contained false /p:MicrosoftNETPlatformLibrary=Microsoft.NETCore.App
-> docker build -t dotnet-20-apisample .
-> docker run -p8080:8080 dotnet-20-apisample
+
+> sudo dotnet publish -f netcoreapp2.0 -c Release -o ./publish/sample -r rhel.7-x64 --self-contained false /p:PublishWithAspNetCoreTargetManifest=false
+> docker build -t sample .
+> docker run -p8080:8080 sample
+
+# 匯出
+docker save -o sample.tar sample
+
+
 ## OLD
 > dotnet publish -c Release -o ./app
 
